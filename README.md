@@ -1,12 +1,6 @@
 # EncyrptionAlgorithms – MD5, SHA256, SHA512, PBKDF2, BCrypt, SCrypt, Kerberos, RSA, AES, DES, Digital Signatures, SSL Certificates.
 
-Learn Java Secure Hashing algorithms in-depth. A secure password hash is an encrypted sequence of characters obtained after applying certain algorithms and manipulations on user-provided password, which are generally very weak and easy to guess.
-
-There are many such hashing algorithms in Java which can prove really effective for password security.
-
-Please remember that once this password hash is generated and stored in the database, you can not convert it back to the original password.
-
-Each time user login into the application, you have to regenerate password hash again and match with the hash stored in the database. So, if the user forgot his/her password, you will have to send him a temporary password and ask him to change it with his new password. It’s common nowadays, right?
+A secure password hash is an encrypted sequence of characters obtained after applying certain algorithms and manipulations on user-provided password, which are generally very weak and easy to guess. There are many such hashing algorithms in Java which can prove really effective for password security. Please remember that once this password hash is generated and stored in the database, you can not convert it back to the original password. Each time user login into the application, you have to regenerate password hash again and match with the hash stored in the database. So, if the user forgot his/her password, you will have to send him a temporary password and ask him to change it with his new password. It’s common nowadays, right?
 
 # MD5 algorithm
 A widely used hash function producing a 128-bit hash value. Although MD5 was initially designed to be used as a cryptographic hash function, it has been found to suffer from extensive vulnerabilities. It can still be used as a checksum to verify data integrity, but only against unintentional corruption. It remains suitable for other non-cryptographic purposes, for example for determining partition for a particular key in a partitioned database.MD5 was designed by Ronald Rivest in 1991 to replace an earlier hash function MD4 and was specified in 1992 as RFC 1321.
@@ -22,3 +16,23 @@ Both produce the MD5 hash 79054025255fb1a26e4bc422aef54eb4.The difference betwee
 
 # Applications
 MD5 digests have been widely used in the software world to provide some assurance that a transferred file has arrived intact. As it is easy to generate MD5 collisions, it is possible for the person who created the file to create a second file with the same checksum, so this technique cannot protect against some forms of malicious tampering.
+
+Although MD5 is a widely spread hashing algorithm, is far from being secure, MD5 generates fairly weak hashes. It’s main advantages are that it is fast, and easy to implement. But it also means that it is susceptible to brute-force and dictionary attacks. Rainbow tables with words and hashes generated allows searching very quickly for a known hash and getting the original word. MD5 is not collision resistant which means that different passwords can eventually result in the same hash. Today, if you are using MD5 hash in your application then consider adding some salt to your security.
+
+# Making MD5 more secure using salt
+Keep in mind, adding salt is not MD5 specific. Salt is randomly generated text/data, appended to the passwored before obtaining hash. Salt is used as an additional input to a one-way function that hashes a password or pass-phrase. 
+
+The original intent of salting was primarily to defeat pre-computed rainbow table attacks that could otherwise be used to greatly improve efficiency of cracking hashed password database. A greater benefit now is to slow down parallel operations that compare hash of a password guess against many password hashes at once. 
+
+# Important: 
+1. SecureRandom must always be used to create good salts, it supports “SHA1PRNG” pseudo random number generator algorithm, and we can take advantage of it. SHA1PRNG algorithm is used as cryptographically strong pseudo-random number generator based on the SHA-1 message digest algorithm. Note that if a seed is not provided, it will generate a seed from a true random number generator (TRNG).
+2. Please note that salt value must be stored for every password hashed. Because when user logins back in system, one must use only originally generated salt to again create hash to match with stored hash. If a different salt is used (we are generating random salt), then generated hash will be different. Also, you might heard of term crazy hashing and salting. It generally refer to creating custom combinations.
+
+# Medium password security using SHA algorithms
+The SHA (Secure Hash Algorithm) is a family of cryptographic hash functions, very similar to MD5 except it generates more strong hashes. However these hashes are not always unique, which means that for two different inputs we could have equal hashes called a “collision”. Chances of collision in SHA is less than MD5. 
+
+Java has 4 implementations of SHA algorithm. A longer hash is more difficult to break. They generate following length hashes in comparison to MD5 (128-bit hash):
+SHA-1 (Simplest one – 160 bits Hash)
+SHA-256 (Stronger than SHA-1 – 256 bits Hash)
+SHA-384 (Stronger than SHA-256 – 384 bits Hash)
+SHA-512 (Stronger than SHA-384 – 512 bits Hash)
