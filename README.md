@@ -48,3 +48,9 @@ AES is block cipher capable of handling 128 bit blocks, using keys sized at 128,
 The problem today is that hardwares have become so much fast that any brute force attack using dictionary and rainbow tables, any password can be cracked in some less or more time. To solve this problem, general idea is to make brute force attack slower, in order to minimize that damage. Our next algorithm, works on this very concept. The goal is to make the hash function slow enough to impede attacks, but still fast enough to not cause a noticeable delay for the user.
 
 This feature is essentially implemented using some CPU intensive algorithms such as PBKDF2, Bcrypt or Scrypt. These algorithms take a work factor (also known as security factor) or iteration count as an argument. This value determines how slow the hash function will be. When computers become faster next year we can increase the work factor to balance it out. Java has implementation of “PBKDF2” algorithm as “PBKDF2WithHmacSHA1“.
+
+# Final Notes
+1.Storing text password with hashing is most dangerous thing for application security today.
+2.MD5 provides basic hashing for generating secure password hash. Adding salt make it further stronger.
+3.MD5 generates 128 bit hash. To make it more secure, use SHA algorithm which generate hashes from 160-bit to 512-bit long. 512-bit is strongest.
+4.Even SHA hashed secure passwords are able to be cracked with today’s fast hardwares. To beat that, you will need algorithms which can make the brute force attacks slower and minimize the impact. Such algorithms are PBKDF2, BCrypt and SCrypt.
