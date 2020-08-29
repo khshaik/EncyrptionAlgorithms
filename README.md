@@ -2,7 +2,7 @@
 
 A secure password hash is an encrypted sequence of characters obtained after applying certain algorithms and manipulations on user-provided password, which are generally very weak and easy to guess. There are many such hashing algorithms in Java which can prove really effective for password security. Please remember that once this password hash is generated and stored in the database, you can not convert it back to the original password. Each time user login into the application, you have to regenerate password hash again and match with the hash stored in the database. So, if the user forgot his/her password, you will have to send him a temporary password and ask him to change it with his new password. It’s common nowadays, right?
 
-# MD5 algorithm
+# Message Digest (MD5) algorithm
 A widely used hash function producing a 128-bit hash value. Although MD5 was initially designed to be used as a cryptographic hash function, it has been found to suffer from extensive vulnerabilities. It can still be used as a checksum to verify data integrity, but only against unintentional corruption. It remains suitable for other non-cryptographic purposes, for example for determining partition for a particular key in a partitioned database.MD5 was designed by Ronald Rivest in 1991 to replace an earlier hash function MD4 and was specified in 1992 as RFC 1321.
 
 One basic requirement of any cryptographic hash function is that it should be "computationally infeasible to find two distinct messages that hash to same value". MD5 fails this requirement catastrophically; such collisions can be found in seconds on an ordinary home computer. The weaknesses of MD5 have been exploited in the field, most infamously by Flame malware in 2012. The CMU Software Engineering Institute considers MD5 essentially "cryptographically broken and unsuitable for further use". As of 2019, MD5 continues to be widely used, in spite of its well-documented weaknesses and deprecation by security experts.
@@ -28,7 +28,7 @@ The original intent of salting was primarily to defeat pre-computed rainbow tabl
 1. SecureRandom must always be used to create good salts, it supports “SHA1PRNG” pseudo random number generator algorithm, and we can take advantage of it. SHA1PRNG algorithm is used as cryptographically strong pseudo-random number generator based on the SHA-1 message digest algorithm. Note that if a seed is not provided, it will generate a seed from a true random number generator (TRNG).
 2. Please note that salt value must be stored for every password hashed. Because when user logins back in system, one must use only originally generated salt to again create hash to match with stored hash. If a different salt is used (we are generating random salt), then generated hash will be different. Also, you might heard of term crazy hashing and salting. It generally refer to creating custom combinations.
 
-# Medium password security using SHA algorithms
+# Secure Hash (SHA) algorithms
 The SHA (Secure Hash Algorithm) is a family of cryptographic hash functions, very similar to MD5 except it generates more strong hashes. However these hashes are not always unique, which means that for two different inputs we could have equal hashes called a “collision”. Chances of collision in SHA is less than MD5. 
 
 Java has 4 implementations of SHA algorithm. A longer hash is more difficult to break. They generate following length hashes in comparison to MD5 (128-bit hash):
@@ -36,3 +36,8 @@ Java has 4 implementations of SHA algorithm. A longer hash is more difficult to 
 2. SHA-256 (Stronger than SHA-1 – 256 bits Hash)
 3. SHA-384 (Stronger than SHA-256 – 384 bits Hash)
 4. SHA-512 (Stronger than SHA-384 – 512 bits Hash)
+
+# Advanced Encryption Standard (AES) algorithm
+Java support many secure encryption algorithms but some of them are weak to be used in security-intensive applications. For example, the Data Encryption Standard (DES) encryption algorithm is considered highly insecure; messages encrypted using DES have been decrypted by brute force within a single day by machines such as the Electronic Frontier Foundation’s (EFF) Deep Crack.
+
+A more secure encryption algorithm is AES – Advanced Encryption Standard which is a symmetric encryption algorithm. AES encryption is used by U.S. for securing sensitive but unclassified material, so we can say it is enough secure.
