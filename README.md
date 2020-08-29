@@ -19,6 +19,8 @@ MD5 digests have been widely used in the software world to provide some assuranc
 
 Although MD5 is a widely spread hashing algorithm, is far from being secure, MD5 generates fairly weak hashes. It’s main advantages are that it is fast, and easy to implement. But it also means that it is susceptible to brute-force and dictionary attacks. Rainbow tables with words and hashes generated allows searching very quickly for a known hash and getting the original word. MD5 is not collision resistant which means that different passwords can eventually result in the same hash. Today, if you are using MD5 hash in your application then consider adding some salt to your security.
 
+NOTE: Once password hash is generated and stored in database, you can not convert it back to original password. Each time user login into application, you have to regenerate password hash again, and match with hash stored in database. So, if user forgot his/her password, you will have to send him a temporary password and ask him to change it with his new password. Well, it’s common trend now-a-days.
+
 # Making MD5 more secure using salt
 Keep in mind, adding salt is not MD5 specific. Salt is randomly generated text/data, appended to the passwored before obtaining hash. Salt is used as an additional input to a one-way function that hashes a password or pass-phrase. 
 
