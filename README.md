@@ -13,6 +13,7 @@ There are also some key terms when it comes to information security — like Con
 2. Integrity confirms that data has not been modified by any mid-level person. Additionally, it means that data reached other user without changes or a breach. 
 3. Availability means data is available for any authorized user. 
 
+# Encryption/ Decryption of Data
 There are many procedures that confirm data confidentiality, integrity, and availability. Almost all procedures use some type of encryption/decryption algorithm to keep data secure from middle attacks.
 
 There are two kinds of security algorithms: 
