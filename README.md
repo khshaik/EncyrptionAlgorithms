@@ -40,4 +40,6 @@ Java has 4 implementations of SHA algorithm. A longer hash is more difficult to 
 # Advanced Encryption Standard (AES) algorithm
 Java support many secure encryption algorithms but some of them are weak to be used in security-intensive applications. For example, the Data Encryption Standard (DES) encryption algorithm is considered highly insecure; messages encrypted using DES have been decrypted by brute force within a single day by machines such as the Electronic Frontier Foundation’s (EFF) Deep Crack.
 
-A more secure encryption algorithm is AES – Advanced Encryption Standard which is a symmetric encryption algorithm. AES encryption is used by U.S. for securing sensitive but unclassified material, so we can say it is enough secure.
+AES is a symmetric encryption algorithm, more secure encryption algorithm which is a symmetric encryption algorithm. AES encryption is used by U.S. for securing sensitive but unclassified material, so we can say it is enough secure. It was intended to be easy to implement in hardware and software, as well as in restricted environments and offer good defenses against various attack techniques.
+
+AES is block cipher capable of handling 128 bit blocks, using keys sized at 128, 192, and 256 bits. Each cipher encrypts and decrypts data in blocks of 128 bits using cryptographic keys of 128-, 192- and 256-bits, respectively. It uses the same key for encrypting and decrypting, so the sender and the receiver must both know — and use — the same secret key.
