@@ -32,7 +32,7 @@ The original intent of salting was primarily to defeat pre-computed rainbow tabl
 The SHA (Secure Hash Algorithm) is a family of cryptographic hash functions, very similar to MD5 except it generates more strong hashes. However these hashes are not always unique, which means that for two different inputs we could have equal hashes called a “collision”. Chances of collision in SHA is less than MD5. 
 
 Java has 4 implementations of SHA algorithm. A longer hash is more difficult to break. They generate following length hashes in comparison to MD5 (128-bit hash):
-SHA-1 (Simplest one – 160 bits Hash)
-SHA-256 (Stronger than SHA-1 – 256 bits Hash)
-SHA-384 (Stronger than SHA-256 – 384 bits Hash)
-SHA-512 (Stronger than SHA-384 – 512 bits Hash)
+1. SHA-1 (Simplest one – 160 bits Hash)
+2. SHA-256 (Stronger than SHA-1 – 256 bits Hash)
+3. SHA-384 (Stronger than SHA-256 – 384 bits Hash)
+4. SHA-512 (Stronger than SHA-384 – 512 bits Hash)
