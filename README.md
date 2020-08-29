@@ -81,7 +81,7 @@ This feature is essentially implemented using some CPU intensive algorithms such
 The concepts behind bcrypt is similar to previous concept as in PBKDF2. It just happened to be that java does not have any inbuilt support for bcrypt algorithm to make the attack slower but still you can find one such implementation in source code download.
 
 # Final Notes
-1.Storing text password with hashing is most dangerous thing for application security today.
-2.MD5 provides basic hashing for generating secure password hash. Adding salt make it further stronger.
-3.MD5 generates 128 bit hash. To make it more secure, use SHA algorithm which generate hashes from 160-bit to 512-bit long. 512-bit is strongest.
-4.Even SHA hashed secure passwords are able to be cracked with today’s fast hardwares. To beat that, you will need algorithms which can make the brute force attacks slower and minimize the impact. Such algorithms are PBKDF2, BCrypt and SCrypt.
+1. Storing text password with hashing is most dangerous thing for application security today.
+2. MD5 provides basic hashing for generating secure password hash. Adding salt make it further stronger.
+3. MD5 generates 128 bit hash. To make it more secure, use SHA algorithm which generate hashes from 160-bit to 512-bit long. 512-bit is strongest.
+4. Even SHA hashed secure passwords are able to be cracked with today’s fast hardwares. To beat that, you will need algorithms which can make the brute force attacks slower and minimize the impact. Such algorithms are PBKDF2, BCrypt and SCrypt.
