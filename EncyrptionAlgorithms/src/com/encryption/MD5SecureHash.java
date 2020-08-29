@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
 
-public class MD5Hash {
+public class MD5SecureHash {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchProviderException 
 	{
