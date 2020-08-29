@@ -49,6 +49,9 @@ The problem today is that hardwares have become so much fast that any brute forc
 
 This feature is essentially implemented using some CPU intensive algorithms such as PBKDF2, Bcrypt or Scrypt. These algorithms take a work factor (also known as security factor) or iteration count as an argument. This value determines how slow the hash function will be. When computers become faster next year we can increase the work factor to balance it out. Java has implementation of “PBKDF2” algorithm as “PBKDF2WithHmacSHA1“.
 
+# BCrypt and SCrypt algorithms
+The concepts behind bcrypt is similar to previous concept as in PBKDF2. It just happened to be that java does not have any inbuilt support for bcrypt algorithm to make the attack slower but still you can find one such implementation in source code download.
+
 # Final Notes
 1.Storing text password with hashing is most dangerous thing for application security today.
 2.MD5 provides basic hashing for generating secure password hash. Adding salt make it further stronger.
