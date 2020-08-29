@@ -9,10 +9,12 @@ public class SecureHashTest {
 
 		String inputValue = "AXBHi987654KJIO9087";
 
-		String encryptedValue = SecureHash.encrypt(inputValue);
+		System.out.println("Input value:"+inputValue);
+
+		String encryptedValue = AESSecureHash.encrypt(inputValue);
 		System.out.println("Encrypted value:"+encryptedValue);
 
-		String decryptedValue =SecureHash.decrypt(encryptedValue);
+		String decryptedValue =AESSecureHash.decrypt(encryptedValue);
 		System.out.println("Decrypted value:"+decryptedValue);		
 
 		Assert.assertTrue("Encrypted and Decrypted values must be exactly same", inputValue.equals(decryptedValue));

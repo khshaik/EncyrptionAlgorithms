@@ -9,7 +9,7 @@ import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-public class SecureHash {
+public class AESSecureHash {
 
 	// Secure hash key
 	private static String secure_hash_key = "9J0D7DE6B5B0503A8044402B9653AN202887DD239678B9F3B4E72A71544B7C2";
