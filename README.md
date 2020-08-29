@@ -1,5 +1,30 @@
 # EncyrptionAlgorithms – MD5, SHA256, SHA512, PBKDF2, BCrypt, SCrypt, Kerberos, RSA, AES, DES, Digital Signatures, SSL Certificates.
 
+Information security is the main concern on Internet. With web, data continuously flowing from one end to another, data security becomes a prime issue. There are many procedures that must be implemented. Different organizations are working to find a more secure way to protect data. Two important terminologies which are discussed during this context are Authentication vs. Authorization.
+
+# Authentication
+The process of ascertaining “is user really someone who he claims to be“. In technical terms, it is the process of login to system through username/password or any similar mechanisms e.g. finger print scanning, security token, security questions or SAML token received from SSO login. There must be something which can identify the user from others.
+
+# Authorization
+Once user is inside system, Authorization refers to rules that determine “what user is allowed to do” and what he is not e.g. a normal user can post a message in any public group, but users only with editor role will be able to delete something. Authorization is often seen as both the introductory setting up of permissions by a system administrator and the checking of the permission values that have already been set up when a user is getting access to the system.
+
+There are also some key terms when it comes to information security — like Confidentiality, Integrity, Availability, etc. 
+1. Confidentiality means that only authorized users can gain access to sensitive data. 
+2. Integrity confirms that data has not been modified by any mid-level person. Additionally, it means that data reached other user without changes or a breach. 
+3. Availability means data is available for any authorized user. 
+
+There are many procedures that confirm data confidentiality, integrity, and availability. Almost all procedures use some type of encryption/decryption algorithm to keep data secure from middle attacks.
+
+There are two kinds of security algorithms: 
+1. Symmetric algorithms (use the same secret key to encrypt/decrypt data)
+2. Asymmetric algorithms (use different secret keys to encrypt/decrypt data).  
+
+# DES algorithm
+DES is a symmetric algorithm, which means that same keys are used to encrypt/decrypt sensitive data. Key length is 8 byte (64 bit). So, to encrypt/decrypt data, the DES algorithm uses an 8-byte key, but 1 byte (8 bit) for parity checking. It's a block cipher algorithm — that's why the data block size of DES algorithm is 64 bit. To encrypt/decrypt data, the DES algorithm uses the Feistel structure. So, it uses some round to encrypt/decrypt data. Though data block size is 64 bit, the number of rounds will be 16 rounds. So, it will use different subkeys for each round. so the number of subkeys will be 16 subkeys.
+
+Modes of Operation
+There are different modes of operation when using the DES algorithm. If each 64 bit is encrypted or decrypted independently, then this mode is Electronic Code Book (ECB). If each 64-bit data is dependent on the previous one, then this mode is called Cipher Block Chaining (CBC) or Cipher Feedback mode (CFB) mode.
+
 A secure password hash is an encrypted sequence of characters obtained after applying certain algorithms and manipulations on user-provided password, which are generally very weak and easy to guess. There are many such hashing algorithms in Java which can prove really effective for password security. Please remember that once this password hash is generated and stored in the database, you can not convert it back to the original password. Each time user login into the application, you have to regenerate password hash again and match with the hash stored in the database. So, if the user forgot his/her password, you will have to send him a temporary password and ask him to change it with his new password. It’s common nowadays, right?
 
 # Message Digest (MD5) algorithm
