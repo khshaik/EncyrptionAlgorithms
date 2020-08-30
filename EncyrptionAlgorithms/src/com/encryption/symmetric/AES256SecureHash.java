@@ -1,4 +1,4 @@
-package com.encryption;
+package com.encryption.symmetric;
 
 import java.security.spec.KeySpec;
 import java.util.Base64;

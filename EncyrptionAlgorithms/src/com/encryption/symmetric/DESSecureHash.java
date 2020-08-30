@@ -1,4 +1,7 @@
-package com.encryption;
+package com.encryption.symmetric;
+
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -55,5 +58,14 @@ public class DESSecureHash {
 
 		// Decode using utf-8
 		return new String(unencryptedByteArray, "UTF8");
-	}    
+	}  
+
+	public static DESKeySpec getKey(String password) throws InvalidKeyException, NoSuchAlgorithmException {
+		return new DESKeySpec(password.getBytes());
+	}
+
+	public static SecretKeyFactory getSecretKeyFactory(String password) throws InvalidKeyException, NoSuchAlgorithmException {
+		DESKeySpec key = new DESKeySpec(password.getBytes());
+		return SecretKeyFactory.getInstance("DES");
+	}
 }

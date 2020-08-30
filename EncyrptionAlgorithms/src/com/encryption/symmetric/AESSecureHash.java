@@ -1,4 +1,4 @@
-package com.encryption;
+package com.encryption.symmetric;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

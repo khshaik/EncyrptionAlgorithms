@@ -1,4 +1,4 @@
-package com.encryption.test;
+package com.encryption.symmetric.test;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
@@ -6,7 +6,7 @@ import javax.crypto.spec.DESKeySpec;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.encryption.DESSecureHash;
+import com.encryption.symmetric.DESSecureHash;
 
 public class DESSecureHashTest {
 
@@ -18,8 +18,8 @@ public class DESSecureHashTest {
 		String inputValue = ORIGINAL_PASSWORD;
 		System.out.println("Input value:"+ORIGINAL_PASSWORD);
 
-		DESKeySpec key = new DESKeySpec(ORIGINAL_PASSWORD.getBytes());
-		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
+		DESKeySpec key = DESSecureHash.getKey(inputValue);
+		SecretKeyFactory keyFactory = DESSecureHash.getSecretKeyFactory(inputValue); 
 
 		String encryptedValue = DESSecureHash.encrypt(keyFactory, key, ORIGINAL_PASSWORD);
 		System.out.println("Encrypted value:"+encryptedValue);

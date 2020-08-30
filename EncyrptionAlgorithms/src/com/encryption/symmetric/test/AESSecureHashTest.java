@@ -1,10 +1,10 @@
-package com.encryption.test;
+package com.encryption.symmetric.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.encryption.AES256SecureHash;
-import com.encryption.AESSecureHash;
+import com.encryption.symmetric.AES256SecureHash;
+import com.encryption.symmetric.AESSecureHash;
 
 public class AESSecureHashTest {
 

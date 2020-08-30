@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
-public class SHAHash {
+public class SHASecureHash {
 
 	private final static String SHA_1 = "SHA-1";
 	private final static String SHA_256 = "SHA-256";
