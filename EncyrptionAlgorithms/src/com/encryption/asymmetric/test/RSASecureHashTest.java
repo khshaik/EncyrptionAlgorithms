@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.encryption.asymmetric.RSASecureHash;
-public class RSASecureHashText {
+public class RSASecureHashTest {
 
     private static String ORIGINAL_TEXT = "Plain text which need to be encrypted by Java RSA Encryption in ECB Mode";
     

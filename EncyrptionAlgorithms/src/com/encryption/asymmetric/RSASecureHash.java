@@ -9,7 +9,7 @@ import java.security.PublicKey;
 import javax.crypto.Cipher;
 public class RSASecureHash {
 
-	static String plainText = "Plain text which need to be encrypted by Java RSA Encryption in ECB Mode";
+	static String plainText = "Plain text which must be encrypted by Java RSA Encryption in ECB Mode";
 
 	public static byte[] encrypt (String plainText,PublicKey publicKey ) throws Exception
 	{
